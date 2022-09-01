@@ -8,8 +8,7 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
-          SafeArea(
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
             height: MediaQuery.of(context).size.height,
@@ -88,30 +87,30 @@ class LoginView extends GetView<LoginController> {
                   child: Column(
                     children: <Widget>[
                       Container(
-                          constraints: const BoxConstraints(maxWidth: 500),
-                          margin: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            'We will be sending you an OTP on this mobile number.',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.poppins(
+                        constraints: const BoxConstraints(maxWidth: 500),
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Text(
+                          'We will be sending you an OTP on this mobile number.',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.poppins(
                               letterSpacing: 2,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 15,
-                            textStyle: const TextStyle(
-                              shadows: [
-                                Shadow(
-                                  color: Color.fromRGBO(93, 6, 138, 150),
-                                  blurRadius: 10.0,
-                                  offset: Offset(5.0, 5.0),
-                                ),
-                                Shadow(
-                                  color: Color.fromRGBO(93, 6, 138, 150),
-                                  blurRadius: 10.0,
-                                  offset: Offset(-5.0, 5.0),
-                                ),
-                              ],
-                            )),
-                          ),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 15,
+                              textStyle: const TextStyle(
+                                shadows: [
+                                  Shadow(
+                                    color: Color.fromRGBO(93, 6, 138, 150),
+                                    blurRadius: 10.0,
+                                    offset: Offset(5.0, 5.0),
+                                  ),
+                                  Shadow(
+                                    color: Color.fromRGBO(93, 6, 138, 150),
+                                    blurRadius: 10.0,
+                                    offset: Offset(-5.0, 5.0),
+                                  ),
+                                ],
+                              )),
+                        ),
                       ),
                       SizedBox(height: 20),
                       Container(
@@ -119,30 +118,29 @@ class LoginView extends GetView<LoginController> {
                         // constraints: const BoxConstraints(
                         //     maxWidth: 500
                         // ),
-                        margin: const EdgeInsets.symmetric(horizontal: 22, vertical: 10),
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 22, vertical: 10),
                         child: const TextField(
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                ),
-                                hintText: '+91',
-
-
-                            )
-                        ),
+                          border: OutlineInputBorder(),
+                          hintText: '+91',
+                        )),
                       ),
                       SizedBox(height: 10),
                       Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        constraints: const BoxConstraints(
-                            maxWidth: 500
-                        ),
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        constraints: const BoxConstraints(maxWidth: 500),
                         child: ElevatedButton(
                           onPressed: () {},
-                          style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Color.fromRGBO(93, 6, 138, 160))
-                          ),
+                          style: ElevatedButton.styleFrom(
+                              shape: const RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(21))),
+                              backgroundColor: Color.fromRGBO(93, 6, 138, 160)),
                           child: Container(
-                            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 8),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
@@ -153,7 +151,8 @@ class LoginView extends GetView<LoginController> {
                                 Container(
                                   padding: const EdgeInsets.all(8),
                                   decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(Radius.circular(20)),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(20)),
                                     color: Color.fromRGBO(93, 6, 138, 150),
                                   ),
                                   child: Icon(

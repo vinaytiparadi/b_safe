@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../controllers/otp_controller.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
-
+import '../controllers/otp_controller.dart';
 
 class OtpView extends GetView<OtpController> {
   const OtpView({Key? key}) : super(key: key);
 
-  final String text="";
+  final String text = "";
 
   Widget otpNumberWidget(int position) {
     try {
@@ -18,19 +15,21 @@ class OtpView extends GetView<OtpController> {
         height: 40,
         width: 40,
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 0),
-            borderRadius: const BorderRadius.all(Radius.circular(8))
-        ),
-        child: Center(child: Text(text[position], style: TextStyle(color: Colors.black),)),
+            border: Border.all(width: 0),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),),
+        child: Center(
+            child: Text(
+          text[position],
+          style: const TextStyle(color: Colors.black),
+        )),
       );
     } catch (e) {
       return Container(
         height: 40,
         width: 40,
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 0),
-            borderRadius: const BorderRadius.all(Radius.circular(8))
-        ),
+            border: Border.all(width: 0),
+            borderRadius: const BorderRadius.all(Radius.circular(8))),
       );
     }
   }
@@ -39,30 +38,28 @@ class OtpView extends GetView<OtpController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(20)),
-              color: Color.fromRGBO(93, 6, 138, 210),
-            ),
-            child: Icon(Icons.arrow_back_ios, color: Color.fromRGBO(93, 6, 138, 210), size: 16,),
-          ),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        elevation: 0,
-        backgroundColor: Colors.white,
-        brightness: Brightness.light,
-      ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(40)),
+                color: Color.fromRGBO(93, 6, 138, 210),
+              ),
+              child: IconButton(
+                  iconSize: 40,
+                  alignment: Alignment.center,
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    color: Color.fromRGBO(93, 6, 138, 210),
+                  )),
+            ),
             Expanded(
               child: Column(
-                mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   Expanded(
                     child: Column(
@@ -70,15 +67,31 @@ class OtpView extends GetView<OtpController> {
                       children: <Widget>[
                         Container(
                             margin: const EdgeInsets.symmetric(horizontal: 20),
-                            child: Text('Enter 6 digits verification code sent to your number', style: TextStyle(color: Colors.black, fontSize: 26, fontWeight: FontWeight.w500))
-                        ),
+                            child: Text(
+                              'Enter 6 digits verification code sent to your number',
+                              style: GoogleFonts.poppins(
+                                  letterSpacing: 2,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 21.5,
+                                  textStyle: const TextStyle(
+                                    shadows: [
+                                      Shadow(
+                                        color: Color.fromRGBO(93, 6, 138, 150),
+                                        blurRadius: 20,
+                                        offset: Offset(10, 9),
+                                      ),
+                                      Shadow(
+                                        color: Color.fromRGBO(93, 6, 138, 150),
+                                        blurRadius: 20,
+                                        offset: Offset(-10, 9),
+                                      ),
+                                    ],
+                                  )),
+                            )),
                         Container(
-                          constraints: const BoxConstraints(
-                              maxWidth: 500
-                          ),
+                          constraints: const BoxConstraints(maxWidth: 500),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               otpNumberWidget(0),
                               otpNumberWidget(1),
@@ -93,26 +106,39 @@ class OtpView extends GetView<OtpController> {
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    constraints: const BoxConstraints(
-                        maxWidth: 500
-                    ),
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    constraints: const BoxConstraints(maxWidth: 500),
                     child: ElevatedButton(
-                      onPressed: () {
-                      },
+                      style: ElevatedButton.styleFrom(
+                          shape: const RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(21)),),
+                          backgroundColor: const Color.fromRGBO(93, 6, 138, 160),
+                      ),
 
+                      onPressed: () {}, // check for otp here
                       child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 8),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            Text('Confirm', style: TextStyle(color: Colors.white),),
+                            const Text(
+                              'Confirm',
+                              style: TextStyle(color: Colors.white),
+                            ),
                             Container(
                               padding: const EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                borderRadius: const BorderRadius.all(Radius.circular(20)),
+                              decoration: const BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
                               ),
-                              child: Icon(Icons.arrow_forward_ios, color: Colors.white, size: 16,),
+                              child: const Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                                size: 16,
+                              ),
                             )
                           ],
                         ),
@@ -120,14 +146,15 @@ class OtpView extends GetView<OtpController> {
                     ),
                   ),
                   NumericKeyboard(
-                    onKeyboardTap: (String text) {  },
-                    textColor: Color.fromRGBO(93, 6, 138, 210),
-                    rightIcon: Icon(
+                    onKeyboardTap: (String text) {},
+                    textColor: const Color.fromRGBO(93, 6, 138, 125),
+                    rightIcon: const Icon(
                       Icons.backspace,
-                      color: Color.fromRGBO(93, 6, 138, 210),
+                      color: Color.fromRGBO(93, 6, 138, 182),
                     ),
                     rightButtonFn: () {},
-                  )
+                  ),
+                  const SizedBox(height: 20),
                 ],
               ),
             )
