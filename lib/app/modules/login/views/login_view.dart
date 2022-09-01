@@ -10,11 +10,15 @@ class LoginView extends GetView<LoginController> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Column(
               children: <Widget>[
+<<<<<<< HEAD
                 SizedBox(height: 50),
+=======
+                const SizedBox(height: 50),
+>>>>>>> 70aa2179506b38334a0f980271df83bc53a66ddd
                 Expanded(
                   flex: 3,
                   child: Column(
@@ -22,7 +26,9 @@ class LoginView extends GetView<LoginController> {
                       const SizedBox(height: 35),
                       Container(
                         margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 20),
+                          horizontal: 20,
+                          vertical: 20,
+                        ),
                         child: Stack(
                           alignment: Alignment.center,
                           textDirection: TextDirection.rtl,
@@ -35,9 +41,10 @@ class LoginView extends GetView<LoginController> {
                                     const BoxConstraints(maxWidth: 500),
                                 // margin: const EdgeInsets.only(top: 100),
                                 decoration: const BoxDecoration(
-                                    color: Color.fromRGBO(93, 6, 138, 210),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(30))),
+                                  color: Color.fromRGBO(93, 6, 138, 210),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(30)),
+                                ),
                               ),
                             ),
                             Center(
@@ -45,9 +52,10 @@ class LoginView extends GetView<LoginController> {
                                 clipBehavior: Clip.hardEdge,
                                 constraints:
                                     const BoxConstraints(maxHeight: 250),
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(60))),
+                                decoration: const BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(60)),
+                                ),
                                 margin:
                                     const EdgeInsets.symmetric(horizontal: 8),
                                 child: Image.asset('assets/women.jpg'),
@@ -59,29 +67,34 @@ class LoginView extends GetView<LoginController> {
                       Text(
                         'B SAFE',
                         style: GoogleFonts.limelight(
-                            fontWeight: FontWeight.w900,
-                            fontSize: 50,
-                            textStyle: const TextStyle(
-                              shadows: [
-                                Shadow(
-                                  color: Color.fromRGBO(93, 6, 138, 150),
-                                  blurRadius: 10.0,
-                                  offset: Offset(5.0, 5.0),
-                                ),
-                                Shadow(
-                                  color: Color.fromRGBO(93, 6, 138, 150),
-                                  blurRadius: 10.0,
-                                  offset: Offset(-5.0, 5.0),
-                                ),
-                              ],
-                            ),
-                            letterSpacing: 6,
-                            color: Color.fromRGBO(34, 29, 58, 85)),
+                          fontWeight: FontWeight.w900,
+                          fontSize: 50,
+                          textStyle: const TextStyle(
+                            shadows: [
+                              Shadow(
+                                color: Color.fromRGBO(93, 6, 138, 150),
+                                blurRadius: 10,
+                                offset: Offset(5, 5),
+                              ),
+                              Shadow(
+                                color: Color.fromRGBO(93, 6, 138, 150),
+                                blurRadius: 10,
+                                offset: Offset(-5, 5),
+                              ),
+                            ],
+                          ),
+                          letterSpacing: 6,
+                          color: const Color.fromRGBO(34, 29, 58, 85),
+                        ),
                       ),
                     ],
                   ),
                 ),
+<<<<<<< HEAD
                 SizedBox(height: 20),
+=======
+                const SizedBox(height: 20),
+>>>>>>> 70aa2179506b38334a0f980271df83bc53a66ddd
                 Expanded(
                   flex: 3,
                   child: Column(
@@ -93,6 +106,7 @@ class LoginView extends GetView<LoginController> {
                           'We will be sending you an OTP on this mobile number.',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
+<<<<<<< HEAD
                               letterSpacing: 2,
                               fontWeight: FontWeight.w600,
                               fontSize: 15,
@@ -127,11 +141,51 @@ class LoginView extends GetView<LoginController> {
                         )),
                       ),
                       SizedBox(height: 10),
+=======
+                            letterSpacing: 2,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 15,
+                            textStyle: const TextStyle(
+                              shadows: [
+                                Shadow(
+                                  color: Color.fromRGBO(93, 6, 138, 150),
+                                  blurRadius: 10,
+                                  offset: Offset(5, 5),
+                                ),
+                                Shadow(
+                                  color: Color.fromRGBO(93, 6, 138, 150),
+                                  blurRadius: 10,
+                                  offset: Offset(-5, 5),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+>>>>>>> 70aa2179506b38334a0f980271df83bc53a66ddd
                       Container(
                         margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
+                          horizontal: 22,
+                          vertical: 10,
+                        ),
+                        child: TextField(
+                          controller: controller.phoneNumberController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: '+91',
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 10,
+                        ),
                         constraints: const BoxConstraints(maxWidth: 500),
                         child: ElevatedButton(
+<<<<<<< HEAD
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
                               shape: const RoundedRectangleBorder(
@@ -145,17 +199,43 @@ class LoginView extends GetView<LoginController> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
                                 Text(
+=======
+                          onPressed: controller.signInWithPhone,
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                              const Color.fromRGBO(93, 6, 138, 160),
+                            ),
+                          ),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 8,
+                              horizontal: 8,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                const Text(
+>>>>>>> 70aa2179506b38334a0f980271df83bc53a66ddd
                                   'Next',
                                   style: TextStyle(color: Colors.white),
                                 ),
                                 Container(
                                   padding: const EdgeInsets.all(8),
+<<<<<<< HEAD
                                   decoration: BoxDecoration(
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(20)),
                                     color: Color.fromRGBO(93, 6, 138, 150),
                                   ),
                                   child: Icon(
+=======
+                                  decoration: const BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(20)),
+                                    color: Color.fromRGBO(93, 6, 138, 150),
+                                  ),
+                                  child: const Icon(
+>>>>>>> 70aa2179506b38334a0f980271df83bc53a66ddd
                                     Icons.arrow_forward_ios,
                                     color: Colors.white,
                                     size: 16,
@@ -165,6 +245,7 @@ class LoginView extends GetView<LoginController> {
                             ),
                           ),
                         ),
+<<<<<<< HEAD
                         // RaisedButton(
                         //   onPressed: () {},
                         //   color: Colors.purpleAccent
@@ -194,6 +275,8 @@ class LoginView extends GetView<LoginController> {
                         //     ),
                         //   ),
                         // ),
+=======
+>>>>>>> 70aa2179506b38334a0f980271df83bc53a66ddd
                       )
                     ],
                   ),
@@ -203,7 +286,6 @@ class LoginView extends GetView<LoginController> {
           ),
         ),
       ),
-      // ),
     );
   }
 }
